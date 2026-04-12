@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="#fafbfc"/>
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="48" fill="#ffffff"/>
+  <circle cx="22" cy="24" r="6" fill="#10b981"/>
+  <circle cx="42" cy="24" r="6" fill="#e6e8ec"/>
+  <circle cx="62" cy="24" r="6" fill="#e6e8ec"/>
+  <rect x="300" y="16" width="200" height="16" rx="8" fill="#f0f2f5"/>
+  <line x1="0" y1="48" x2="800" y2="48" stroke="#e6e8ec"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="48" width="200" height="452" fill="#ffffff"/>
+  <line x1="200" y1="48" x2="200" y2="500" stroke="#e6e8ec"/>
+  <rect x="16" y="72" width="168" height="36" rx="8" fill="#10b981" opacity="0.12"/>
+  <rect x="30" y="84" width="90" height="12" rx="6" fill="#10b981"/>
+  <rect x="16" y="120" width="168" height="28" rx="6" fill="#f0f2f5"/>
+  <rect x="16" y="156" width="168" height="28" rx="6" fill="#f0f2f5"/>
+  <rect x="16" y="192" width="168" height="28" rx="6" fill="#f0f2f5"/>
+  <rect x="16" y="228" width="168" height="28" rx="6" fill="#f0f2f5"/>
+
+  <!-- Main content -->
+  <text x="224" y="100" font-family="Inter" font-size="22" font-weight="700" fill="#0a0a0a">Good morning 👋</text>
+  <rect x="224" y="118" width="180" height="12" rx="6" fill="#e6e8ec"/>
+
+  <!-- Cards -->
+  <rect x="224" y="150" width="260" height="110" rx="14" fill="url(#accent1)" stroke="#10b981" stroke-opacity="0.3"/>
+  <rect x="244" y="168" width="100" height="10" rx="5" fill="#10b981"/>
+  <rect x="244" y="188" width="180" height="22" rx="6" fill="#0a0a0a"/>
+  <rect x="244" y="222" width="140" height="10" rx="5" fill="#5a6170"/>
+
+  <rect x="504" y="150" width="260" height="110" rx="14" fill="#ffffff" stroke="#e6e8ec"/>
+  <rect x="524" y="168" width="80" height="10" rx="5" fill="#5a6170"/>
+  <rect x="524" y="188" width="160" height="22" rx="6" fill="#0a0a0a"/>
+  <rect x="524" y="222" width="120" height="10" rx="5" fill="#5a6170"/>
+
+  <!-- List -->
+  <rect x="224" y="280" width="540" height="52" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+  <circle cx="248" cy="306" r="8" fill="#10b981"/>
+  <rect x="268" y="300" width="280" height="12" rx="6" fill="#0a0a0a"/>
+
+  <rect x="224" y="344" width="540" height="52" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+  <circle cx="248" cy="370" r="8" fill="#e6e8ec"/>
+  <rect x="268" y="364" width="240" height="12" rx="6" fill="#5a6170"/>
+
+  <rect x="224" y="408" width="540" height="52" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+  <circle cx="248" cy="434" r="8" fill="#e6e8ec"/>
+  <rect x="268" y="428" width="300" height="12" rx="6" fill="#5a6170"/>
+</svg>
