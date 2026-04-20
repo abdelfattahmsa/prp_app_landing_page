@@ -1,6 +1,5 @@
 /* ==========================================================================
    PRP Landing Page — Scripts
-   Theme toggle, i18n (EN/AR + RTL), screenshot carousel, subtle reveals.
    ========================================================================== */
 
 (function () {
@@ -9,46 +8,108 @@
   /* ------------------ i18n ------------------ */
   const translations = {
     en: {
-      'meta.title': 'PRP — Plan. Record. Progress.',
-      'meta.description': 'PRP is a minimal, fast productivity app to plan your day, record your progress, and stay in flow. Available on Windows and Web.',
+      'meta.title': 'PRP — Personal Resource Planner',
+      'meta.description': 'PRP is your personal operating system for Time, Finance, Energy, and Health — a data-driven decision engine to optimize every dimension of your life.',
       'nav.features': 'Features',
-      'nav.screenshots': 'Screenshots',
+      'nav.membership': 'Membership',
+      'nav.docs': 'Docs',
       'nav.availability': 'Platforms',
-      'hero.pill': 'New — v1.0 is here',
-      'hero.titleA': 'Plan. Record.',
-      'hero.titleB': 'Progress.',
-      'hero.sub': 'A minimal, fast productivity app that helps you plan your day, record what you do, and see real progress — without the clutter.',
+      'nav.openApp': 'Open App',
+      'hero.pill': 'v4.3 — Your Personal OS',
+      'hero.titleA': 'Manage Your',
+      'hero.titleB': '4 Life Resources.',
+      'hero.sub': 'PRP is your personal operating system for Time, Finance, Energy, and Health — a data-driven decision engine that transforms raw life data into actionable insights.',
       'hero.ctaWindows': 'Download for Windows',
       'hero.ctaWeb': 'Open Web App',
-      'hero.metaA': 'Offline-first',
-      'hero.metaB': 'Lightweight',
-      'hero.metaC': 'Free to start',
+      'hero.metaA': 'Core Modules',
+      'hero.metaB': 'to Start',
+      'hero.metaC': 'Latest Release',
+      'modules.title': 'Your 4 Life Resources',
+      'modules.sub': 'PRP transforms raw life data into actionable insights across every dimension that matters.',
+      'modules.time.title': 'Time',
+      'modules.time.desc': 'Schedule management, time tracking, calendar events, and task priorities in one unified view.',
+      'modules.time.f1': 'Smart Calendar',
+      'modules.time.f2': 'Time Tracking',
+      'modules.time.f3': 'Task Management',
+      'modules.finance.title': 'Finance',
+      'modules.finance.desc': 'Complete financial picture — banking, investments, debt, expenses, net worth, and live FX rates.',
+      'modules.finance.f1': 'Multi-Currency',
+      'modules.finance.f2': 'Live FX & Stocks',
+      'modules.finance.f3': 'Net Worth Tracking',
+      'modules.energy.title': 'Energy',
+      'modules.energy.desc': 'Focus sessions, Pomodoro timer, goal tracking with subtasks, and an ideas manager to stay in flow.',
+      'modules.energy.f1': 'Pomodoro Focus',
+      'modules.energy.f2': 'Goal Tracking',
+      'modules.energy.f3': 'Ideas Manager',
+      'modules.health.title': 'Health',
+      'modules.health.desc': 'Habit tracking, daily metrics, fasting timer, steps, sleep, and water intake monitoring.',
+      'modules.health.f1': 'Habit Heatmap',
+      'modules.health.f2': 'Fasting Timer',
+      'modules.health.f3': 'Daily Metrics',
       'shots.title': 'A look inside',
       'shots.sub': 'Clean, focused, and built to get out of your way.',
-      'shots.cap1': 'Dashboard — your day at a glance.',
-      'shots.cap2': 'Planner — drag, drop, done.',
-      'shots.cap3': 'Progress — real metrics, zero noise.',
-      'features.title': "Everything you need. Nothing you don't.",
-      'features.sub': 'Core features designed for focus and flow.',
-      'features.f1.title': 'Smart Planner',
-      'features.f1.desc': 'Plan your day in seconds with a keyboard-first, drag-and-drop interface.',
-      'features.f2.title': 'Time Tracking',
-      'features.f2.desc': 'Record how you actually spend your time — automatically and privately.',
-      'features.f3.title': 'Progress Insights',
-      'features.f3.desc': 'Weekly reports that show real progress, not vanity metrics.',
-      'features.f4.title': 'Private by Default',
-      'features.f4.desc': 'Your data stays on your device. End-to-end encrypted sync if you opt in.',
-      'features.f5.title': 'Blazing Fast',
-      'features.f5.desc': 'Instant startup, zero lag. Built for speed from the first keystroke.',
-      'features.f6.title': 'Customizable',
-      'features.f6.desc': 'Themes, shortcuts, layouts — bend PRP to fit your workflow.',
+      'shots.cap1': 'Dashboard — all 4 resources at a glance.',
+      'shots.cap2': 'Finance — complete net worth overview.',
+      'shots.cap3': 'Health — habits, metrics, and streaks.',
+      'features.title': 'Built for how you actually live.',
+      'features.sub': 'Every feature designed to surface insights, not add busywork.',
+      'features.f1.title': 'Smart Insights',
+      'features.f1.desc': 'Interactive charts, habit heatmaps, cashflow analysis, and spending breakdowns — raw data made actionable.',
+      'features.f2.title': 'Persistent Focus Timer',
+      'features.f2.desc': 'Pomodoro sessions that follow you across every screen. A floating banner keeps you on track — never lose your flow.',
+      'features.f3.title': 'Multi-Currency Finance',
+      'features.f3.desc': 'Live FX rates, stock prices via Alpha Vantage, 35+ Egyptian bank autocomplete, and full net worth tracking.',
+      'features.f4.title': 'Health Rituals',
+      'features.f4.desc': 'Visual habit heatmaps, fasting timers, daily step and sleep goals — build lasting routines with real accountability.',
+      'features.f5.title': 'Deep Customization',
+      'features.f5.desc': 'Dark/light/system themes, custom avatar, personalized greeting with live clock — PRP adapts to your style.',
+      'features.f6.title': 'Secure & Private',
+      'features.f6.desc': 'Supabase backend with row-level security policies. Your data is end-to-end protected — always.',
+      'membership.title': 'Simple, Honest Pricing',
+      'membership.sub': 'Start free. Upgrade when PRP becomes indispensable to your daily life.',
+      'membership.free.name': 'Free',
+      'membership.free.period': 'forever',
+      'membership.free.desc': 'Everything you need to get started managing your life.',
+      'membership.free.f1': 'Time & Calendar management',
+      'membership.free.f2': 'Basic finance tracking',
+      'membership.free.f3': 'Habit & health tracking',
+      'membership.free.f4': 'Focus & Pomodoro sessions',
+      'membership.free.f5': 'Web & Windows access',
+      'membership.free.cta': 'Get Started Free',
+      'membership.pro.badge': 'Most Popular',
+      'membership.pro.name': 'Pro',
+      'membership.pro.price': 'See Pricing',
+      'membership.pro.desc': 'Unlock the full power of your personal operating system.',
+      'membership.pro.f1': 'Everything in Free',
+      'membership.pro.f2': 'Unlimited history & data',
+      'membership.pro.f3': 'Live FX rates & stock tracking',
+      'membership.pro.f4': 'Advanced analytics & charts',
+      'membership.pro.f5': 'Avatar & full customization',
+      'membership.pro.f6': 'Priority support',
+      'membership.pro.cta': 'View Full Pricing',
+      'docs.title': 'Documentation & Wiki',
+      'docs.sub': 'Everything you need to get the most out of PRP.',
+      'docs.d1.title': 'Getting Started',
+      'docs.d1.desc': 'Set up your account, configure your profile, and start tracking all 4 resources in minutes.',
+      'docs.d2.title': 'Time Module Guide',
+      'docs.d2.desc': 'Master calendar events, time blocking, task priorities, and schedule allocation reports.',
+      'docs.d3.title': 'Finance Module Guide',
+      'docs.d3.desc': 'Set up bank accounts, track investments, manage debt, and monitor your net worth in multiple currencies.',
+      'docs.d4.title': 'Health & Energy Guide',
+      'docs.d4.desc': 'Configure habits, set up fasting schedules, track goals with subtasks, and run focus sessions effectively.',
       'avail.title': 'Available where you work',
       'avail.sub': 'More platforms coming soon.',
       'avail.download': 'Download',
       'avail.open': 'Open App',
       'avail.web': 'Web',
       'avail.soon': 'Coming Soon',
-      'footer.tagline': 'Plan. Record. Progress.',
+      'download.title': 'PRP for Windows',
+      'download.desc': 'Free download. Requires Windows 10 or later.',
+      'download.btn': 'Download .exe',
+      'kyberia.label': 'Built by',
+      'kyberia.desc': 'PRP is a product of Kyberia Labs — the technology innovation lab under Peridot Holdings. We build intelligent tools that help people live and work at their highest level.',
+      'footer.tagline': 'Personal Resource Planner',
+      'footer.kyberia': 'A Kyberia Labs product',
       'footer.github': 'GitHub',
       'footer.contact': 'Contact',
       'footer.privacy': 'Privacy',
@@ -56,46 +117,108 @@
       'footer.rights': 'All rights reserved.'
     },
     ar: {
-      'meta.title': 'PRP — خطّط. سجّل. تقدّم.',
-      'meta.description': 'PRP تطبيق إنتاجية بسيط وسريع لتخطيط يومك وتسجيل تقدمك دون تشتيت. متوفر على ويندوز والويب.',
+      'meta.title': 'PRP — المخطّط الشخصي للموارد',
+      'meta.description': 'PRP هو نظام التشغيل الشخصي الخاص بك للوقت والمال والطاقة والصحة — محرك قرار مبني على البيانات لتحسين كل جانب من جوانب حياتك.',
       'nav.features': 'المزايا',
-      'nav.screenshots': 'لقطات',
+      'nav.membership': 'العضوية',
+      'nav.docs': 'التوثيق',
       'nav.availability': 'المنصّات',
-      'hero.pill': 'جديد — الإصدار 1.0 متاح',
-      'hero.titleA': 'خطّط. سجّل.',
-      'hero.titleB': 'تقدّم.',
-      'hero.sub': 'تطبيق إنتاجية بسيط وسريع يساعدك على تخطيط يومك وتسجيل ما تُنجزه ورؤية تقدم حقيقي — بلا فوضى.',
+      'nav.openApp': 'افتح التطبيق',
+      'hero.pill': 'الإصدار 4.3 — نظام تشغيلك الشخصي',
+      'hero.titleA': 'أدِر',
+      'hero.titleB': 'مواردك الـ4 الحيوية.',
+      'hero.sub': 'PRP هو نظام تشغيلك الشخصي للوقت والمال والطاقة والصحة — محرك قرار مبني على البيانات يحوّل معطيات حياتك إلى رؤى قابلة للتنفيذ.',
       'hero.ctaWindows': 'تحميل لويندوز',
       'hero.ctaWeb': 'افتح تطبيق الويب',
-      'hero.metaA': 'يعمل دون إنترنت',
-      'hero.metaB': 'خفيف وسريع',
-      'hero.metaC': 'مجاني للبداية',
+      'hero.metaA': 'وحدات أساسية',
+      'hero.metaB': 'للبدء',
+      'hero.metaC': 'أحدث إصدار',
+      'modules.title': 'مواردك الـ4 الحيوية',
+      'modules.sub': 'يحوّل PRP بيانات حياتك الخام إلى رؤى قابلة للتنفيذ في كل جانب يهمّك.',
+      'modules.time.title': 'الوقت',
+      'modules.time.desc': 'إدارة الجدول الزمني وتتبّع الوقت وأحداث التقويم والمهام في عرض موحّد.',
+      'modules.time.f1': 'تقويم ذكي',
+      'modules.time.f2': 'تتبّع الوقت',
+      'modules.time.f3': 'إدارة المهام',
+      'modules.finance.title': 'المال',
+      'modules.finance.desc': 'صورة مالية كاملة — بنوك واستثمارات وديون ومصاريف وصافي الثروة وأسعار صرف مباشرة.',
+      'modules.finance.f1': 'متعدد العملات',
+      'modules.finance.f2': 'أسعار صرف مباشرة',
+      'modules.finance.f3': 'تتبّع صافي الثروة',
+      'modules.energy.title': 'الطاقة',
+      'modules.energy.desc': 'جلسات تركيز وتقنية بومودورو وتتبّع الأهداف ومدير الأفكار للبقاء في حالة التدفّق.',
+      'modules.energy.f1': 'تركيز بومودورو',
+      'modules.energy.f2': 'تتبّع الأهداف',
+      'modules.energy.f3': 'مدير الأفكار',
+      'modules.health.title': 'الصحة',
+      'modules.health.desc': 'تتبّع العادات والمقاييس اليومية ومؤقت الصيام وخطوات النوم وشرب الماء.',
+      'modules.health.f1': 'خريطة حرارية للعادات',
+      'modules.health.f2': 'مؤقت الصيام',
+      'modules.health.f3': 'المقاييس اليومية',
       'shots.title': 'نظرة من الداخل',
       'shots.sub': 'واجهة نظيفة ومركّزة، صُمّمت لتختفي من طريقك.',
-      'shots.cap1': 'لوحة التحكم — يومك في نظرة واحدة.',
-      'shots.cap2': 'المخطِّط — اسحب، أفلت، تمّ.',
-      'shots.cap3': 'التقدّم — مقاييس حقيقية بلا ضجيج.',
-      'features.title': 'كل ما تحتاجه. ولا شيء زائد.',
-      'features.sub': 'مزايا أساسية مصمّمة للتركيز والتدفّق.',
-      'features.f1.title': 'مخطِّط ذكي',
-      'features.f1.desc': 'خطّط يومك في ثوانٍ بواجهة تدعم لوحة المفاتيح والسحب والإفلات.',
-      'features.f2.title': 'تتبّع الوقت',
-      'features.f2.desc': 'سجّل وقتك تلقائيًا وبخصوصية تامّة.',
-      'features.f3.title': 'رؤى التقدّم',
-      'features.f3.desc': 'تقارير أسبوعية تُظهر تقدّمًا حقيقيًا لا أرقامًا شكلية.',
-      'features.f4.title': 'الخصوصية أولًا',
-      'features.f4.desc': 'بياناتك تبقى على جهازك. مزامنة مشفّرة طرفًا لطرف عند الرغبة.',
-      'features.f5.title': 'سرعة فائقة',
-      'features.f5.desc': 'تشغيل فوري بلا تأخير. مبنيّ للسرعة منذ أول ضغطة زر.',
-      'features.f6.title': 'قابل للتخصيص',
-      'features.f6.desc': 'ثيمات واختصارات وتخطيطات — طوّع PRP لأسلوبك.',
+      'shots.cap1': 'لوحة التحكم — جميع الموارد الـ4 في لمحة.',
+      'shots.cap2': 'المال — نظرة شاملة على صافي الثروة.',
+      'shots.cap3': 'الصحة — العادات والمقاييس والإنجازات.',
+      'features.title': 'مبنيّ لحياتك الحقيقية.',
+      'features.sub': 'كل ميزة صُمّمت لإبراز الرؤى لا لإضافة أعباء.',
+      'features.f1.title': 'رؤى ذكية',
+      'features.f1.desc': 'مخططات تفاعلية وخرائط حرارية للعادات وتحليل التدفق النقدي — بيانات خام تتحوّل إلى قرارات.',
+      'features.f2.title': 'مؤقت تركيز دائم',
+      'features.f2.desc': 'جلسات بومودورو تتبعك عبر كل شاشة. شريط عائم يبقيك على المسار — لا تفقد تركيزك أبدًا.',
+      'features.f3.title': 'تمويل متعدد العملات',
+      'features.f3.desc': 'أسعار صرف مباشرة وأسعار أسهم وإكمال تلقائي لأكثر من 35 بنكًا مصريًا وتتبّع صافي الثروة.',
+      'features.f4.title': 'طقوس صحية',
+      'features.f4.desc': 'خرائط حرارية للعادات ومؤقتات الصيام وأهداف الخطوات والنوم — بنِ عادات راسخة بمسؤولية حقيقية.',
+      'features.f5.title': 'تخصيص عميق',
+      'features.f5.desc': 'ثيمات داكنة وفاتحة وتلقائية وصورة رمزية مخصصة وتحية شخصية بساعة حية — PRP يتكيّف مع أسلوبك.',
+      'features.f6.title': 'آمن وخاص',
+      'features.f6.desc': 'خادم Supabase مع سياسات أمان على مستوى الصف. بياناتك محمية دائمًا.',
+      'membership.title': 'تسعير بسيط وصادق',
+      'membership.sub': 'ابدأ مجانًا. رقِّ اشتراكك حين يصبح PRP لا غنى عنه في يومك.',
+      'membership.free.name': 'مجاني',
+      'membership.free.period': 'للأبد',
+      'membership.free.desc': 'كل ما تحتاجه للبدء في إدارة حياتك.',
+      'membership.free.f1': 'إدارة الوقت والتقويم',
+      'membership.free.f2': 'تتبّع مالي أساسي',
+      'membership.free.f3': 'تتبّع العادات والصحة',
+      'membership.free.f4': 'جلسات التركيز وبومودورو',
+      'membership.free.f5': 'الوصول عبر الويب وويندوز',
+      'membership.free.cta': 'ابدأ مجانًا',
+      'membership.pro.badge': 'الأكثر شيوعًا',
+      'membership.pro.name': 'برو',
+      'membership.pro.price': 'عرض الأسعار',
+      'membership.pro.desc': 'أطلق القوة الكاملة لنظام تشغيلك الشخصي.',
+      'membership.pro.f1': 'كل ميزات الخطة المجانية',
+      'membership.pro.f2': 'سجل بيانات غير محدود',
+      'membership.pro.f3': 'أسعار صرف مباشرة وتتبّع الأسهم',
+      'membership.pro.f4': 'تحليلات ومخططات متقدمة',
+      'membership.pro.f5': 'صورة رمزية وتخصيص كامل',
+      'membership.pro.f6': 'دعم ذو أولوية',
+      'membership.pro.cta': 'عرض الأسعار الكاملة',
+      'docs.title': 'التوثيق والويكي',
+      'docs.sub': 'كل ما تحتاجه للاستفادة القصوى من PRP.',
+      'docs.d1.title': 'البدء السريع',
+      'docs.d1.desc': 'أنشئ حسابك وهيّئ ملفك الشخصي وابدأ تتبّع الموارد الـ4 في دقائق.',
+      'docs.d2.title': 'دليل وحدة الوقت',
+      'docs.d2.desc': 'أتقن أحداث التقويم وحجب الوقت وأولويات المهام وتقارير توزيع الجدول.',
+      'docs.d3.title': 'دليل وحدة المال',
+      'docs.d3.desc': 'أضف حساباتك البنكية وتتبّع استثماراتك وأدِر ديونك وراقب صافي ثروتك بعملات متعددة.',
+      'docs.d4.title': 'دليل الصحة والطاقة',
+      'docs.d4.desc': 'هيّئ عاداتك وجداول الصيام وتتبّع أهدافك بمهام فرعية وأدِر جلسات التركيز بفاعلية.',
       'avail.title': 'متاح حيث تعمل',
       'avail.sub': 'المزيد من المنصات قريبًا.',
       'avail.download': 'تحميل',
       'avail.open': 'افتح التطبيق',
       'avail.web': 'الويب',
       'avail.soon': 'قريبًا',
-      'footer.tagline': 'خطّط. سجّل. تقدّم.',
+      'download.title': 'PRP لويندوز',
+      'download.desc': 'تحميل مجاني. يتطلب ويندوز 10 أو أحدث.',
+      'download.btn': 'تحميل .exe',
+      'kyberia.label': 'بناه',
+      'kyberia.desc': 'PRP منتج من Kyberia Labs — مختبر الابتكار التقني التابع لـ Peridot Holdings. نبني أدوات ذكية تساعد الناس على العيش والعمل بأعلى مستوياتهم.',
+      'footer.tagline': 'المخطّط الشخصي للموارد',
+      'footer.kyberia': 'منتج Kyberia Labs',
       'footer.github': 'جيت‌هَب',
       'footer.contact': 'تواصل',
       'footer.privacy': 'الخصوصية',
@@ -130,7 +253,6 @@
     if (label) label.textContent = lang === 'ar' ? 'ع' : 'EN';
   }
 
-  /* ------------------ Theme ------------------ */
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
@@ -138,15 +260,12 @@
 
   /* ------------------ Init ------------------ */
   document.addEventListener('DOMContentLoaded', function () {
-    // Apply saved language
     const savedLang = localStorage.getItem('lang') || 'en';
     setLanguage(savedLang);
 
-    // Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
       themeToggle.addEventListener('click', () => {
@@ -155,7 +274,6 @@
       });
     }
 
-    // Language toggle
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {
       langToggle.addEventListener('click', () => {
@@ -164,7 +282,6 @@
       });
     }
 
-    // Header scrolled state
     const header = document.getElementById('header');
     const onScroll = () => {
       if (!header) return;
@@ -173,10 +290,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    // Screenshot carousel
     initCarousel();
-
-    // Reveal on scroll
     initReveal();
   });
 
@@ -191,7 +305,6 @@
     const slides = Array.from(track.querySelectorAll('.shot'));
     if (!slides.length) return;
 
-    // Build dots
     slides.forEach((_, i) => {
       const b = document.createElement('button');
       b.setAttribute('role', 'tab');
@@ -201,7 +314,7 @@
     });
 
     function currentIndex() {
-      const slideWidth = slides[0].getBoundingClientRect().width + 20; // gap
+      const slideWidth = slides[0].getBoundingClientRect().width + 20;
       return Math.round(track.scrollLeft / slideWidth);
     }
 
@@ -227,16 +340,13 @@
       scrollToIndex(Math.min(slides.length - 1, Math.abs(currentIndex()) + dir));
     });
 
-    track.addEventListener('scroll', () => {
-      window.requestAnimationFrame(updateDots);
-    });
-
+    track.addEventListener('scroll', () => window.requestAnimationFrame(updateDots));
     updateDots();
   }
 
   /* ------------------ Reveal on scroll ------------------ */
   function initReveal() {
-    const targets = document.querySelectorAll('.feature, .shot, .platform, .section__head');
+    const targets = document.querySelectorAll('.feature, .shot, .platform, .section__head, .module, .plan, .doc-card');
     targets.forEach((el) => el.classList.add('reveal'));
 
     if (!('IntersectionObserver' in window)) {
@@ -251,7 +361,7 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     targets.forEach((el) => io.observe(el));
   }
