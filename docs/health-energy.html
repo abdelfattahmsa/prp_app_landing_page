@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health &amp; Energy — PRP Docs</title>
+  <meta name="description" content="Configure habits, fasting schedules, goal tracking, Pomodoro focus sessions, and daily health metrics in PRP." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/docs/docs.css" />
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}}());
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="brand">
+        <span class="brand__mark">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M10 22V10h6a4 4 0 0 1 0 8h-4" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand__name">PRP</span>
+      </a>
+      <nav class="nav">
+        <a href="/#features">Features</a>
+        <a href="/#membership">Membership</a>
+        <a href="/#docs" class="nav--active">Docs</a>
+        <a href="/#availability">Platforms</a>
+      </nav>
+      <div class="header__actions">
+        <a href="https://web.prp-app.website" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">Open App</a>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="docs-layout container">
+    <aside class="docs-sidebar">
+      <p class="docs-sidebar__label">Documentation</p>
+      <nav>
+        <a href="/docs/getting-started.html" class="docs-sidebar__link">Getting Started</a>
+        <a href="/docs/time-module.html" class="docs-sidebar__link">Time Module</a>
+        <a href="/docs/finance-module.html" class="docs-sidebar__link">Finance Module</a>
+        <a href="/docs/health-energy.html" class="docs-sidebar__link docs-sidebar__link--active">Health &amp; Energy</a>
+      </nav>
+      <div class="docs-sidebar__divider"></div>
+      <a href="https://web.prp-app.website" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Open App</a>
+    </aside>
+
+    <main class="docs-content">
+      <div class="docs-breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/#docs">Docs</a> <span>/</span> Health &amp; Energy</div>
+
+      <div class="docs-module-badges">
+        <div class="docs-module-badge docs-module-badge--energy">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Energy
+        </div>
+        <div class="docs-module-badge docs-module-badge--health">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Health
+        </div>
+      </div>
+
+      <h1 class="docs-title">Health &amp; Energy Guide</h1>
+      <p class="docs-lead">Build lasting health habits, run Pomodoro focus sessions, track goals with subtasks, and monitor your daily metrics — all from one unified module pair.</p>
+
+      <div class="docs-toc">
+        <p class="docs-toc__label">On this page</p>
+        <a href="#energy-overview">Energy Overview</a>
+        <a href="#pomodoro">Pomodoro Focus Sessions</a>
+        <a href="#goals">Goal Tracking</a>
+        <a href="#ideas">Ideas Manager</a>
+        <a href="#health-overview">Health Overview</a>
+        <a href="#habits">Habit Tracking</a>
+        <a href="#fasting">Fasting Timer</a>
+        <a href="#daily-metrics">Daily Metrics</a>
+      </div>
+
+      <!-- ENERGY -->
+      <h2 id="energy-overview">Energy Overview</h2>
+      <p>The Energy module is designed to protect and amplify your mental output. It groups three tools that work together: a persistent Pomodoro timer, a goal tracker with subtasks, and an ideas capture board.</p>
+
+      <h2 id="pomodoro">Pomodoro Focus Sessions</h2>
+      <p>The Pomodoro technique breaks work into focused sprints (typically 25 minutes) separated by short breaks. PRP's timer stays visible across every screen via a floating banner.</p>
+      <ol class="docs-list">
+        <li>Go to <strong>Energy → Focus</strong>.</li>
+        <li>Set your session duration (default: 25 min) and break length (default: 5 min).</li>
+        <li>Optionally link the session to a goal or task for automatic time logging.</li>
+        <li>Tap <strong>Start</strong> — a floating banner appears at the top of every screen.</li>
+        <li>When the timer ends, PRP notifies you to take a break.</li>
+        <li>After 4 sessions, take a longer break (default: 15 min).</li>
+      </ol>
+
+      <div class="docs-callout docs-callout--tip">
+        <strong>Tip:</strong> The floating focus banner persists even when you navigate to Finance or Health — you never accidentally lose your session mid-work.
+      </div>
+
+      <h2 id="goals">Goal Tracking</h2>
+      <p>Goals in PRP support full subtask trees, so you can break big ambitions into daily actions:</p>
+      <ol class="docs-list">
+        <li>Go to <strong>Energy → Goals → Add Goal</strong>.</li>
+        <li>Enter a title, target date, and priority level.</li>
+        <li>Add subtasks — each stored as JSONB, supporting unlimited nesting.</li>
+        <li>Mark subtasks complete as you progress. The goal card shows a live completion percentage.</li>
+        <li>Completed goals are archived automatically — your history is always preserved.</li>
+      </ol>
+
+      <h2 id="ideas">Ideas Manager</h2>
+      <p>Capture ideas before they disappear. The Ideas board is a lightweight scratch-pad:</p>
+      <ul class="docs-list">
+        <li>Tap <strong>+</strong> to add an idea with a title and optional body text.</li>
+        <li>Tag ideas by category (project, personal, later, etc.).</li>
+        <li>Promote an idea to a full Goal with one tap when you're ready to act on it.</li>
+      </ul>
+
+      <!-- HEALTH -->
+      <h2 id="health-overview">Health Overview</h2>
+      <p>The Health module tracks the physical side of your life — what you do every day, consistently. It focuses on building streaks, not perfection.</p>
+
+      <h2 id="habits">Habit Tracking</h2>
+      <p>Habits are the core of the Health module. Each habit has a daily check-in and generates a GitHub-style heatmap of your streaks:</p>
+      <ol class="docs-list">
+        <li>Go to <strong>Health → Habits → Add Habit</strong>.</li>
+        <li>Name the habit and choose a frequency: daily, weekdays, or custom days.</li>
+        <li>Pick an icon and color for quick visual identification.</li>
+        <li>Each day, tap the habit to mark it complete. Your streak counter increments.</li>
+        <li>View the <strong>Habit Heatmap</strong> to see consistency over the past year at a glance.</li>
+      </ol>
+
+      <div class="docs-callout docs-callout--info">
+        Missing one day doesn't reset your streak — PRP uses a <em>grace day</em> system. Two consecutive misses resets the streak.
+      </div>
+
+      <h2 id="fasting">Fasting Timer</h2>
+      <p>The fasting timer tracks intermittent fasting windows with a live countdown:</p>
+      <ol class="docs-list">
+        <li>Go to <strong>Health → Fasting</strong>.</li>
+        <li>Choose a fasting protocol: 16:8, 18:6, 20:4, or custom.</li>
+        <li>Tap <strong>Start Fast</strong> when you begin your fast.</li>
+        <li>A live elapsed timer shows how far into your window you are.</li>
+        <li>Tap <strong>Break Fast</strong> when you eat — the session is logged with duration.</li>
+        <li>View your fasting history as a calendar to spot patterns.</li>
+      </ol>
+
+      <h2 id="daily-metrics">Daily Metrics</h2>
+      <p>Log your key health numbers each day to build a longitudinal picture of your wellbeing:</p>
+      <ul class="docs-list">
+        <li><strong>Steps</strong> — enter manually or sync from your device's step count.</li>
+        <li><strong>Sleep</strong> — log hours of sleep each night; weekly average shown on dashboard.</li>
+        <li><strong>Water</strong> — tap to log glasses of water toward your daily goal.</li>
+        <li><strong>Weight</strong> — optional weight log with a trend line chart.</li>
+      </ul>
+      <p>All metrics are visible on the <strong>Health dashboard</strong> as a daily summary card — no digging required.</p>
+
+      <div class="docs-next-cards">
+        <a href="/docs/getting-started.html" class="docs-next-card">
+          <strong>← Getting Started</strong>
+          <p>Review account setup and first login.</p>
+        </a>
+        <a href="/docs/time-module.html" class="docs-next-card">
+          <strong>Time Module Guide →</strong>
+          <p>Pair focus sessions with time-blocked calendar events.</p>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="/script.js" defer></script>
+  <script src="/docs/docs.js" defer></script>
+</body>
+</html>

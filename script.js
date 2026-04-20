@@ -15,7 +15,7 @@
       'nav.docs': 'Docs',
       'nav.availability': 'Platforms',
       'nav.openApp': 'Open App',
-      'hero.pill': 'v4.3 — Your Personal OS',
+      'hero.pill': 'v4.7 — Your Personal OS',
       'hero.titleA': 'Manage Your',
       'hero.titleB': '4 Life Resources.',
       'hero.sub': 'PRP is your personal operating system for Time, Finance, Energy, and Health — a data-driven decision engine that transforms raw life data into actionable insights.',
@@ -24,6 +24,7 @@
       'hero.metaA': 'Core Modules',
       'hero.metaB': 'to Start',
       'hero.metaC': 'Latest Release',
+      'hero.metaVersion': 'v4.7',
       'modules.title': 'Your 4 Life Resources',
       'modules.sub': 'PRP transforms raw life data into actionable insights across every dimension that matters.',
       'modules.time.title': 'Time',
@@ -66,7 +67,7 @@
       'features.f6.title': 'Secure & Private',
       'features.f6.desc': 'Supabase backend with row-level security policies. Your data is end-to-end protected — always.',
       'membership.title': 'Simple, Honest Pricing',
-      'membership.sub': 'Start free. Upgrade when PRP becomes indispensable to your daily life.',
+      'membership.sub': 'Start free. Pro membership is coming soon.',
       'membership.free.name': 'Free',
       'membership.free.period': 'forever',
       'membership.free.desc': 'Everything you need to get started managing your life.',
@@ -76,9 +77,9 @@
       'membership.free.f4': 'Focus & Pomodoro sessions',
       'membership.free.f5': 'Web & Windows access',
       'membership.free.cta': 'Get Started Free',
-      'membership.pro.badge': 'Most Popular',
+      'membership.pro.badge': 'Coming Soon',
       'membership.pro.name': 'Pro',
-      'membership.pro.price': 'See Pricing',
+      'membership.pro.price': 'Coming Soon',
       'membership.pro.desc': 'Unlock the full power of your personal operating system.',
       'membership.pro.f1': 'Everything in Free',
       'membership.pro.f2': 'Unlimited history & data',
@@ -86,7 +87,8 @@
       'membership.pro.f4': 'Advanced analytics & charts',
       'membership.pro.f5': 'Avatar & full customization',
       'membership.pro.f6': 'Priority support',
-      'membership.pro.cta': 'View Full Pricing',
+      'membership.pro.cta': 'Notify Me',
+      'kyberia.cta': 'Visit Kyberia Labs →',
       'docs.title': 'Documentation & Wiki',
       'docs.sub': 'Everything you need to get the most out of PRP.',
       'docs.d1.title': 'Getting Started',
@@ -124,7 +126,7 @@
       'nav.docs': 'التوثيق',
       'nav.availability': 'المنصّات',
       'nav.openApp': 'افتح التطبيق',
-      'hero.pill': 'الإصدار 4.3 — نظام تشغيلك الشخصي',
+      'hero.pill': 'الإصدار 4.7 — نظام تشغيلك الشخصي',
       'hero.titleA': 'أدِر',
       'hero.titleB': 'مواردك الـ4 الحيوية.',
       'hero.sub': 'PRP هو نظام تشغيلك الشخصي للوقت والمال والطاقة والصحة — محرك قرار مبني على البيانات يحوّل معطيات حياتك إلى رؤى قابلة للتنفيذ.',
@@ -185,9 +187,9 @@
       'membership.free.f4': 'جلسات التركيز وبومودورو',
       'membership.free.f5': 'الوصول عبر الويب وويندوز',
       'membership.free.cta': 'ابدأ مجانًا',
-      'membership.pro.badge': 'الأكثر شيوعًا',
+      'membership.pro.badge': 'قريبًا',
       'membership.pro.name': 'برو',
-      'membership.pro.price': 'عرض الأسعار',
+      'membership.pro.price': 'قريبًا',
       'membership.pro.desc': 'أطلق القوة الكاملة لنظام تشغيلك الشخصي.',
       'membership.pro.f1': 'كل ميزات الخطة المجانية',
       'membership.pro.f2': 'سجل بيانات غير محدود',
@@ -195,7 +197,9 @@
       'membership.pro.f4': 'تحليلات ومخططات متقدمة',
       'membership.pro.f5': 'صورة رمزية وتخصيص كامل',
       'membership.pro.f6': 'دعم ذو أولوية',
-      'membership.pro.cta': 'عرض الأسعار الكاملة',
+      'membership.pro.cta': 'أبلغني عند الإطلاق',
+      'membership.sub': 'ابدأ مجانًا. العضوية الاحترافية قريبًا.',
+      'kyberia.cta': 'زيارة Kyberia Labs →',
       'docs.title': 'التوثيق والويكي',
       'docs.sub': 'كل ما تحتاجه للاستفادة القصوى من PRP.',
       'docs.d1.title': 'البدء السريع',
@@ -292,7 +296,20 @@
 
     initCarousel();
     initReveal();
+    initBackToTop();
   });
+
+  /* ------------------ Back to Top ------------------ */
+  function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('is-visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   /* ------------------ Carousel ------------------ */
   function initCarousel() {
