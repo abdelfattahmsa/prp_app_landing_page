@@ -1,0 +1,173 @@
+/* ==========================================================================
+   PRP — Roadmap Styles
+   ========================================================================== */
+
+.roadmap-hero {
+  padding: 72px 0 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.roadmap-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center top, var(--accent-soft), transparent 65%);
+  pointer-events: none;
+}
+.roadmap-hero .container { position: relative; z-index: 1; }
+.roadmap-hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin: 12px 0;
+}
+.roadmap-hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 540px;
+  margin: 0 auto 24px;
+}
+
+.roadmap-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.rm-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.rm-badge--done    { background: var(--accent-soft); color: var(--accent); }
+.rm-badge--done::before { background: var(--accent); }
+.rm-badge--active  { background: rgba(234,179,8,.15); color: #B45309; }
+.rm-badge--active::before { background: #EAB308; }
+.rm-badge--planned { background: var(--bg-alt); color: var(--text-muted); border: 1px solid var(--border); }
+.rm-badge--planned::before { background: var(--border); }
+
+[data-theme="dark"] .rm-badge--active { color: #FDE047; background: rgba(234,179,8,.12); }
+
+/* ---------- Board layout ---------- */
+.roadmap-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 0;
+  align-items: start;
+  margin-bottom: 0;
+}
+
+/* ---------- Column ---------- */
+.rm-column { display: flex; flex-direction: column; gap: 12px; }
+
+.rm-column__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  margin-bottom: 4px;
+}
+.rm-column__head--done    { background: var(--accent-soft); color: var(--accent); }
+.rm-column__head--active  { background: rgba(234,179,8,.15); color: #B45309; }
+.rm-column__head--planned { background: var(--bg-alt); color: var(--text-muted); border: 1px solid var(--border); }
+[data-theme="dark"] .rm-column__head--active { color: #FDE047; background: rgba(234,179,8,.12); }
+
+/* ---------- Card ---------- */
+.rm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+.rm-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.rm-card--done    { border-left: 3px solid var(--accent); }
+.rm-card--active  { border-left: 3px solid #EAB308; }
+.rm-card--planned { opacity: 0.8; }
+
+.rm-card__version {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.rm-card--active .rm-card__version { color: #EAB308; }
+
+.rm-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.rm-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Progress bar */
+.rm-progress {
+  height: 4px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.rm-progress__bar {
+  height: 100%;
+  width: var(--pct, 0%);
+  background: #EAB308;
+  border-radius: 999px;
+  transition: width 800ms ease;
+}
+
+/* Tags */
+.rm-card__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.rm-card__tags span {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .roadmap-body { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .roadmap-body { grid-template-columns: 1fr; }
+  .rm-column:first-child .rm-card { display: none; }
+  .rm-column:first-child .rm-card:nth-child(-n+4) { display: flex; }
+}

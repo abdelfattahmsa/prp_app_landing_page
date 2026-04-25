@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap — PRP</title>
+  <meta name="description" content="See what's shipped, what's in progress, and what's coming next in PRP — the Personal Resource Planner." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/docs/docs.css" />
+  <link rel="stylesheet" href="/roadmap.css" />
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}}());
+  </script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="brand" aria-label="PRP home">
+        <span class="brand__mark">
+          <img src="/assets/favicon.svg" alt="" width="28" height="28" aria-hidden="true" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">
+          <span style="display:none">
+            <svg viewBox="0 0 32 32" width="28" height="28" fill="none"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M10 22V10h6a4 4 0 0 1 0 8h-4" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </span>
+        <span class="brand__name">PRP</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/roadmap.html" class="nav--active">Roadmap</a>
+        <a href="/wiki.html">Wiki</a>
+        <a href="/#availability">Platforms</a>
+      </nav>
+      <div class="header__actions">
+        <a href="/support.html" class="btn btn--ghost btn--sm">Support</a>
+        <a href="https://web.prp-app.website" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Open App</a>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="roadmap-hero">
+      <div class="container">
+        <span class="pill">Transparency First</span>
+        <h1>Product Roadmap</h1>
+        <p>What's shipped, what's in progress, and what's coming next. Updated with every release.</p>
+        <div class="roadmap-legend">
+          <span class="rm-badge rm-badge--done">Shipped</span>
+          <span class="rm-badge rm-badge--active">In Progress</span>
+          <span class="rm-badge rm-badge--planned">Planned</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="container roadmap-body">
+
+      <!-- SHIPPED -->
+      <div class="rm-column">
+        <div class="rm-column__head rm-column__head--done">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Shipped
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.7</div>
+          <h3>Windows Desktop App</h3>
+          <p>Full native Windows build via Flutter. Offline-capable, system notifications, runs alongside the web version with real-time sync.</p>
+          <div class="rm-card__tags"><span>Platform</span><span>Desktop</span></div>
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.7</div>
+          <h3>Persistent Focus Timer Banner</h3>
+          <p>Pomodoro timer that follows you across every screen as a floating banner — no more losing your session mid-navigation.</p>
+          <div class="rm-card__tags"><span>Energy</span><span>UX</span></div>
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.6</div>
+          <h3>Live Stock Price Integration</h3>
+          <p>Connect holdings to Alpha Vantage for real-time stock prices and unrealised gain/loss tracking inside the Finance module.</p>
+          <div class="rm-card__tags"><span>Finance</span><span>API</span></div>
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.5</div>
+          <h3>Habit Heatmap &amp; Fasting Timer</h3>
+          <p>GitHub-style yearly heatmap for habit streaks. Configurable intermittent fasting timer with session history log.</p>
+          <div class="rm-card__tags"><span>Health</span></div>
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.4</div>
+          <h3>Ideas Manager</h3>
+          <p>Lightweight capture board in the Energy module. Add, tag, and promote ideas to full goals with one tap.</p>
+          <div class="rm-card__tags"><span>Energy</span></div>
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.3</div>
+          <h3>Full Theme System</h3>
+          <p>Dark / Light / System-follow modes persisted across sessions. Custom avatar upload to Supabase Storage.</p>
+          <div class="rm-card__tags"><span>UX</span><span>Customization</span></div>
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.2</div>
+          <h3>Multi-Currency Finance &amp; Live FX</h3>
+          <p>Accounts in any currency, live foreign exchange rates, and 35+ Egyptian bank autocomplete with branch data.</p>
+          <div class="rm-card__tags"><span>Finance</span></div>
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.1</div>
+          <h3>Supabase Auth &amp; Row-Level Security</h3>
+          <p>Migrated to Supabase Auth with full RLS policies. Every row of data is scoped to the authenticated user.</p>
+          <div class="rm-card__tags"><span>Security</span><span>Backend</span></div>
+        </div>
+
+        <div class="rm-card rm-card--done">
+          <div class="rm-card__version">v4.0</div>
+          <h3>Initial Release — 4 Core Modules</h3>
+          <p>Time, Finance, Energy, and Health modules shipped as a unified Flutter web app. First public deployment.</p>
+          <div class="rm-card__tags"><span>Core</span><span>Launch</span></div>
+        </div>
+      </div>
+
+      <!-- IN PROGRESS -->
+      <div class="rm-column">
+        <div class="rm-column__head rm-column__head--active">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          In Progress
+        </div>
+
+        <div class="rm-card rm-card--active">
+          <div class="rm-progress">
+            <div class="rm-progress__bar" style="--pct: 65%"></div>
+          </div>
+          <h3>Pro Membership Tier</h3>
+          <p>Pricing infrastructure, feature gating, and the upgrade flow. Unlocks advanced analytics, unlimited history, and priority support.</p>
+          <div class="rm-card__tags"><span>Membership</span><span>Backend</span></div>
+        </div>
+
+        <div class="rm-card rm-card--active">
+          <div class="rm-progress">
+            <div class="rm-progress__bar" style="--pct: 40%"></div>
+          </div>
+          <h3>Advanced Analytics Dashboard</h3>
+          <p>Cross-module insights — correlate your focus sessions with finance goals, health streaks with productivity, and more.</p>
+          <div class="rm-card__tags"><span>All Modules</span><span>Data</span></div>
+        </div>
+
+        <div class="rm-card rm-card--active">
+          <div class="rm-progress">
+            <div class="rm-progress__bar" style="--pct: 30%"></div>
+          </div>
+          <h3>In-App Notifications</h3>
+          <p>Configurable reminders for habits, fasting windows, upcoming tasks, and goal deadlines. Push notifications on Windows.</p>
+          <div class="rm-card__tags"><span>UX</span><span>Engagement</span></div>
+        </div>
+
+        <div class="rm-card rm-card--active">
+          <div class="rm-progress">
+            <div class="rm-progress__bar" style="--pct: 20%"></div>
+          </div>
+          <h3>Recurring Transactions</h3>
+          <p>Auto-log monthly expenses and income in the Finance module — subscriptions, rent, salary — with configurable schedules.</p>
+          <div class="rm-card__tags"><span>Finance</span></div>
+        </div>
+      </div>
+
+      <!-- PLANNED -->
+      <div class="rm-column">
+        <div class="rm-column__head rm-column__head--planned">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Planned
+        </div>
+
+        <div class="rm-card rm-card--planned">
+          <h3>Android App</h3>
+          <p>Full-featured Android release via Flutter. Matches web and Windows functionality with native Android notifications and widgets.</p>
+          <div class="rm-card__tags"><span>Platform</span><span>Mobile</span></div>
+        </div>
+
+        <div class="rm-card rm-card--planned">
+          <h3>iOS App</h3>
+          <p>iPhone and iPad build. Includes Health app integration for automatic steps, sleep, and heart rate sync.</p>
+          <div class="rm-card__tags"><span>Platform</span><span>Mobile</span></div>
+        </div>
+
+        <div class="rm-card rm-card--planned">
+          <h3>macOS App</h3>
+          <p>Native macOS desktop experience with menu bar quick-entry, Spotlight integration, and universal sync.</p>
+          <div class="rm-card__tags"><span>Platform</span><span>Desktop</span></div>
+        </div>
+
+        <div class="rm-card rm-card--planned">
+          <h3>Calendar Import / Export</h3>
+          <p>Import events from Google Calendar, Apple Calendar, and Outlook. Export your schedule as an ICS file.</p>
+          <div class="rm-card__tags"><span>Time</span><span>Integration</span></div>
+        </div>
+
+        <div class="rm-card rm-card--planned">
+          <h3>Bank Statement Import (CSV / PDF)</h3>
+          <p>Automatically populate transactions from exported bank statements — no manual entry for bulk history.</p>
+          <div class="rm-card__tags"><span>Finance</span></div>
+        </div>
+
+        <div class="rm-card rm-card--planned">
+          <h3>Arabic Language (Full RTL)</h3>
+          <p>Complete Arabic localisation with Cairo font, RTL layout, and right-to-left number formatting for all modules.</p>
+          <div class="rm-card__tags"><span>i18n</span></div>
+        </div>
+
+        <div class="rm-card rm-card--planned">
+          <h3>Widgets &amp; Home Screen Shortcuts</h3>
+          <p>At-a-glance widgets for daily habit status, net worth delta, and focus timer — on Android, iOS, and macOS.</p>
+          <div class="rm-card__tags"><span>Mobile</span><span>UX</span></div>
+        </div>
+
+        <div class="rm-card rm-card--planned">
+          <h3>Pro API Access</h3>
+          <p>REST API for Pro users to read and write their own PRP data — ideal for automation, integrations, and personal dashboards.</p>
+          <div class="rm-card__tags"><span>Pro</span><span>Developer</span></div>
+        </div>
+      </div>
+
+    </div><!-- /.roadmap-body -->
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container" style="text-align:center; max-width: 540px;">
+        <h2 style="font-size:clamp(22px,3vw,32px); letter-spacing:-0.025em; margin-bottom:12px;">Have a feature idea?</h2>
+        <p style="color:var(--text-muted); font-size:17px; margin-bottom:28px;">We build PRP in the open. Submit a feature request or vote on existing ones directly on GitHub.</p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a href="https://github.com/abdelfattahmsa/PRP-APP/issues/new?labels=feature-request" target="_blank" rel="noopener" class="btn btn--primary">Request a Feature</a>
+          <a href="/support.html" class="btn btn--ghost">Contact Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="brand">
+          <span class="brand__mark">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M10 22V10h6a4 4 0 0 1 0 8h-4" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand__name">PRP</span>
+        </a>
+        <p>Personal Resource Planner</p>
+        <p class="footer__by">A Kyberia Labs product</p>
+      </div>
+      <nav class="footer__links">
+        <a href="/#features">Features</a>
+        <a href="/roadmap.html">Roadmap</a>
+        <a href="/wiki.html">Wiki</a>
+        <a href="/support.html">Support</a>
+        <a href="https://github.com/abdelfattahmsa/PRP-APP" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:hello@prp-app.website">Contact</a>
+      </nav>
+      <div class="footer__copy">
+        <span>&copy; <span id="year"></span> PRP / Kyberia Labs. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="/docs/docs.js" defer></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();});</script>
+</body>
+</html>
