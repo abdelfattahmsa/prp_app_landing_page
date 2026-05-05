@@ -1065,6 +1065,44 @@ html[dir="rtl"] .oss-stats {
   color: var(--text-muted);
 }
 
+/* ---------- Newsletter Form ---------- */
+.newsletter-section { border-top: 1px solid var(--border); }
+.newsletter-form { width: 100%; }
+.newsletter-form__row {
+  display: flex;
+  gap: 10px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.newsletter-form__input {
+  flex: 1;
+  padding: 0 16px;
+  height: 46px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color var(--transition);
+  outline: none;
+}
+.newsletter-form__input:focus { border-color: var(--accent); }
+.newsletter-form__input::placeholder { color: var(--text-muted); }
+.newsletter-form__btn { height: 46px; white-space: nowrap; }
+.newsletter-form__status {
+  margin-top: 12px;
+  font-size: 14px;
+  min-height: 20px;
+  color: var(--text-muted);
+}
+.newsletter-form__status--success { color: var(--accent); }
+.newsletter-form__status--error { color: #ef4444; }
+@media (max-width: 480px) {
+  .newsletter-form__row { flex-direction: column; }
+  .newsletter-form__btn { width: 100%; justify-content: center; }
+}
+
 /* ---------- WhatsApp Bubble ---------- */
 .wa-bubble {
   position: fixed;

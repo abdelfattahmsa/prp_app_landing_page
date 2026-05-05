@@ -142,7 +142,14 @@
       'footer.contact': 'Contact',
       'footer.privacy': 'Privacy',
       'footer.terms': 'Terms',
-      'footer.rights': 'All rights reserved.'
+      'footer.rights': 'All rights reserved.',
+      'newsletter.heading': 'Stay in the loop',
+      'newsletter.sub': 'Get notified about new features and releases. No spam, ever.',
+      'newsletter.placeholder': 'your@email.com',
+      'newsletter.cta': 'Notify Me',
+      'newsletter.success': "You're on the list! Check your inbox for a welcome email.",
+      'newsletter.error': 'Something went wrong. Please try again.',
+      'newsletter.invalid': 'Please enter a valid email address.'
     },
     ar: {
       'meta.title': 'PRP — المخطّط الشخصي للموارد',
@@ -279,7 +286,14 @@
       'footer.contact': 'تواصل',
       'footer.privacy': 'الخصوصية',
       'footer.terms': 'الشروط',
-      'footer.rights': 'جميع الحقوق محفوظة.'
+      'footer.rights': 'جميع الحقوق محفوظة.',
+      'newsletter.heading': 'ابقَ على اطّلاع',
+      'newsletter.sub': 'احصل على إشعارات بالمزايا والإصدارات الجديدة. بدون بريد مزعج.',
+      'newsletter.placeholder': 'بريدك@الإلكتروني.com',
+      'newsletter.cta': 'أخبرني',
+      'newsletter.success': 'أنت على القائمة! تحقق من بريدك الوارد لرسالة الترحيب.',
+      'newsletter.error': 'حدث خطأ ما. يرجى المحاولة مرة أخرى.',
+      'newsletter.invalid': 'يرجى إدخال عنوان بريد إلكتروني صحيح.'
     }
   };
 
@@ -350,6 +364,7 @@
     initReveal();
     initBackToTop();
     initMobileMenu();
+    initNewsletter();
   });
 
   /* ------------------ Back to Top ------------------ */
@@ -401,6 +416,55 @@
     window.addEventListener('resize', function () {
       if (window.innerWidth > 640) closeMenu();
     }, { passive: true });
+  }
+
+  /* ------------------ Newsletter Form ------------------ */
+  function initNewsletter() {
+    var form = document.getElementById('newsletterForm');
+    var statusEl = document.getElementById('newsletterStatus');
+    if (!form || !statusEl) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var email = document.getElementById('newsletterEmail').value.trim();
+      var lang = document.documentElement.getAttribute('lang') || 'en';
+      var t = translations[lang] || translations.en;
+
+      // Basic validation
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setStatus('error', t['newsletter.invalid']);
+        return;
+      }
+
+      var btn = form.querySelector('.newsletter-form__btn');
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      setStatus('', '…');
+
+      try {
+        var res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+        if (res.ok) {
+          setStatus('success', t['newsletter.success']);
+          form.reset();
+        } else {
+          setStatus('error', t['newsletter.error']);
+        }
+      } catch (_) {
+        setStatus('error', t['newsletter.error']);
+      } finally {
+        btn.disabled = false;
+        btn.style.opacity = '';
+      }
+    });
+
+    function setStatus(type, msg) {
+      statusEl.textContent = msg;
+      statusEl.className = 'newsletter-form__status' + (type ? ' newsletter-form__status--' + type : '');
+    }
   }
 
   /* ------------------ Carousel ------------------ */

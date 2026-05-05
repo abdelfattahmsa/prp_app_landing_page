@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Landing page for PRP — a minimal, fast productivity app.",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "npx --yes serve . -l 3000",
     "start": "npx --yes serve . -l 3000"
+  },
+  "dependencies": {
+    "resend": "^4.0.0"
   },
   "keywords": ["landing-page", "static", "html", "css", "js"],
   "license": "MIT"

@@ -632,6 +632,21 @@
     </section>
   </main>
 
+  <!-- Newsletter / Waitlist -->
+  <section class="section newsletter-section">
+    <div class="container" style="max-width:540px; text-align:center;">
+      <h2 style="font-size:clamp(22px,3vw,32px); letter-spacing:-0.025em; margin-bottom:10px;" data-i18n="newsletter.heading">Stay in the loop</h2>
+      <p style="color:var(--text-muted); font-size:17px; margin-bottom:28px;" data-i18n="newsletter.sub">Get notified about new features and releases. No spam, ever.</p>
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <div class="newsletter-form__row">
+          <input type="email" id="newsletterEmail" name="email" class="newsletter-form__input" placeholder="your@email.com" autocomplete="email" required aria-label="Email address" data-i18n-placeholder="newsletter.placeholder" />
+          <button type="submit" class="btn btn--primary newsletter-form__btn" data-i18n="newsletter.cta">Notify Me</button>
+        </div>
+        <p class="newsletter-form__status" id="newsletterStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
