@@ -349,6 +349,7 @@
     initCarousel();
     initReveal();
     initBackToTop();
+    initMobileMenu();
   });
 
   /* ------------------ Back to Top ------------------ */
@@ -361,6 +362,45 @@
     btn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  /* ------------------ Mobile Menu ------------------ */
+  function initMobileMenu() {
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+
+    var backdrop = document.createElement('div');
+    backdrop.className = 'mobile-menu-backdrop';
+    document.body.appendChild(backdrop);
+
+    function openMenu() {
+      toggle.setAttribute('aria-expanded', 'true');
+      menu.classList.add('is-open');
+      backdrop.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-open');
+      backdrop.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function () {
+      toggle.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu();
+    });
+
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+
+    backdrop.addEventListener('click', closeMenu);
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 640) closeMenu();
+    }, { passive: true });
   }
 
   /* ------------------ Carousel ------------------ */
